@@ -1,0 +1,70 @@
+#header {
+  position: relative;
+  display: flex;
+  justify-content : space-between;
+  align-items:center;
+  height : 15vh;
+  background-color: #1d1b09;
+  color:white;
+  padding: 0 2rem;
+}
+
+#header-left,
+#header-right {
+  flex: 1; /* 💡 왼쪽/오른쪽 공간 균등 확보 100%로 따지면 left가 왼쪽 50% right가 나머지 50%*/ 
+  display: flex;
+  align-items: center;
+}
+
+#header-left {
+  gap: 1rem;
+}
+
+#header-right {
+  justify-content: flex-end; /* flex(가로로 컨테이너 차지) -> justify-content는 flex 박스 안에서에 정렬 -> flex-end (flex는 기본적으로 좌->우 정렬이기에 제일 끝은 우측 끝  */
+  gap: 0.5rem;
+}
+
+#header-right button {
+  opacity: 0.7;
+}
+
+#header-right button:hover {
+  opacity: 1;
+}
+
+#header-center {
+  position: absolute;
+  text-align: center;
+  left: 50%;  /* 해당 요소가 왼쪽으로부터 50% 떨어진 지점 모서리 끝에 닿기 == 왼쪽으로부터 50% 떨어진 지점은 자연스럽게 정 가운데  */
+  transform: translateX(-50%); /* 위에 값으로 인해 50%지점 모서리만 닿게되면 살짝 오른쪽으로 쏠릴 수 있음으로 x축으로 -50을 줌으로써 정 가운데에 글자 한가운데가 들어감*/
+}
+
+.bloody-text {
+  background: linear-gradient(90deg, #7b1e1e, #a92525, #d64545); /* linear-gradient 그라데이션 왼쪽에서 오른쪽 색으로, 90deg = 90도 각도 방향으로(오른쪽), 0도는 위쪽*/
+  -webkit-background-clip: text;  /*webkit- 은 브라우저 호환때문에 붙여서씀, 크롬 계열은 필수로 필요함, 백그라운드를 어느부분까지 차지할지 : text까지만  */
+  -webkit-text-fill-color: transparent; /*글자색을 투명하게*/
+  font-weight: bold;
+}
+
+.App {
+  text-align: center;
+}
+.logo {
+  width: 150px;
+  filter: brightness(3) invert(3) grayscale(100%) opacity(0.8); 
+  /*opacity : 투명도  1이 불투명, 0은 완전 투명
+  , grayscale: 흑백처리 100%면 완전 흑백
+  , brightness : 밝기 조절(1이 원본 밝기 > 3은 3배 밝기
+  , invert : 색상 반전(보통은 0~1사이), 1이 완전 반전 */
+}
+section {
+  height: 70vh;
+}
+footer {
+  padding : 10px 0 0 100px;
+  height: 15vh;
+  font-size:small;
+  background-color: #1d1b09;
+  color:white;
+}
